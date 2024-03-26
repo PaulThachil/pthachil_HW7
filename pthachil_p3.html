@@ -3,15 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/57e373e982.js" crossorigin="anonymous"></script>
     <title>Business Analytics Student Survey</title>
+    <style>
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #333333;
+            color: #f8f8f8;
+            font-size: 1.15rem;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            border-radius: 6px;
+            padding: 15px;
+
+            /* Position the tooltip text */
+            position: absolute;
+            z-index: 1;
+            top: 100%;
+            left: 50%;
+            margin-left: -100px;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            width: 80%; /* Adjust width as needed */
+        }
+        .footer {
+            margin-top: 20px;
+        }
+        .required-field {
+            color: red;
+        }
+        .fontawesome {
+            font-size: 1.15rem;
+            color: blue;
+            margin-left: 5px;
+        }
+
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Business Analytics Student Survey</h1>
-    </header>
-    <main>
-        <p>Ask gender/sex question</p>
-        <p>Ask race/ethnicity question </p>
-    </main>
-</body>
-</html>
+    <div class="container">
+        <header>
+            <h1>Business Analytics Student Survey</h1>
+        </header>
+        <main>
+            <form action="pthachil_p3.html" method="post">
+                <p>What is your race?</p>
+                <select name="race" id="race-select" required>
+                    <option value="">-- select race --</option>
+                    <option value="american_indian_alaska_native">American Indian or Alaska Native</option>
+                    <option value="asian">Asian</option>
+                    <option value="black_african_american">Black or African American</option>
+                    <option value="native_hawaiian_pacific_islander">Native Hawaiian or Other Pacific Islander</option>
+                    <option value="white">White</option>
+                </select>
+
+                <p>What is your ethnicity?</p>
+                <select name="ethnicity" id="ethnicity-select" required>
+                    <option value="">-- select ethnicity --</option>
+                    <option value="hispanic_latino">Hispanic or Latino</option>
+                    <option value="not_hispanic_latino">Not Hispanic or Latino</option>
+                </select>
+
+                <p>What was your sex recorded at birth?</p>
+                    <select name="sex_at_birth" id="sex-at-birth-select" required>
+                        <option value="">-- select sex at birth --</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>     
+                        <option value="intersex">Intersex</option>            
+                    </select>
+                
+                <p>How do you identify your gender?</p>
+                <div class="tooltip">
+                    <i class="fas fa-info-circle fontawesome"></i>
+                    <select name="gender_identity" id="gender-identity-select" required>
+                        <option value="">-- select gender identity --</option>
+                        <option value="man">Man</option>
+                        <option value="woman">Woman</option>
+                        <option value="trans_man">Trans Man</option>
+                        <option value="trans_woman">Trans Woman</option>
+                        <option value="genderqueer">Genderqueer</option>
+                        <option value="gender_non_conforming">Gender Non-conforming</option>
+                        <option value="non_binary">Non-binary</option>
+                        <option value="multi_gender">Multi-gender</option>
+                        <option value="decline">Decline to state</option>
+                    </select>
+                    <span class="tooltiptext">Identifying your gender helps us enhance diversity and inclusivity in tech by addressing historical gender imbalances.</span>
+                </div>
+            </main>
+            <div class="footer">
+                <p>Page 3 of 3</p>
+                <button type="submit">Finish</button>
+            </div>
+            </form>
+        </div>
+    </body>
+    </html>

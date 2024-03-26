@@ -4,14 +4,194 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Analytics Student Survey</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            width: 80%; /* Adjust width as needed */
+        }
+        .footer {
+            margin-top: 20px;
+        }
+        .required-field {
+            color: red;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .radio-container {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .radio-container input[type="radio"] {
+            display: none;
+        }
+        .radio-container label {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+            cursor: pointer;
+            position: relative;
+        }
+        .radio-container input[type="radio"]:checked + label::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: block;
+        }
+        label {
+            font-size: 16px; /* Adjust font size as needed */
+        }
+        .checkbox-container {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .checkbox-container input[type="checkbox"] {
+            display: none;
+        }
+        .checkbox-container label {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border: 2px solid #ccc;
+            cursor: pointer;
+            position: relative;
+        }
+        .checkbox-container input[type="checkbox"]:checked + label::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Business Analytics Student Survey</h1>
-    </header>
-    <main>
-        <p>I am finishing my (year at iowa)</p>
-        <p>BAIS Core Classes I've completed (selection) </p>
-    </main>
-</body>
-</html>
+    <div class="container">
+        <header>
+            <h1>Business Analytics Student Survey</h1>
+        </header>
+        <main>
+            <p>I am finishing my:</p>
+            <ul>
+                <li>
+                    <div class="radio-container">
+                        <input type="radio" id="first-year" name="year" value="First Year">
+                        <label for="first-year"></label>
+                    </div>
+                    <label for="first-year">First Year</label>
+                </li>
+                <li>
+                    <div class="radio-container">
+                        <input type="radio" id="second-year" name="year" value="Second Year">
+                        <label for="second-year"></label>
+                    </div>
+                    <label for="second-year">Second Year</label>
+                </li>
+                <li>
+                    <div class="radio-container">
+                        <input type="radio" id="third-year" name="year" value="Third Year">
+                        <label for="third-year"></label>
+                    </div>
+                    <label for="third-year">Third Year</label>
+                </li>
+                <li>
+                    <div class="radio-container">
+                        <input type="radio" id="fourth-year" name="year" value="Fourth Year">
+                        <label for="fourth-year"></label>
+                    </div>
+                    <label for="fourth-year">Fourth Year</label>
+                </li>
+                <li>
+                    <div class="radio-container">
+                        <input type="radio" id="fifth-year" name="year" value="Fifth Year or More">
+                        <label for="fifth-year"></label>
+                    </div>
+                    <label for="fifth-year">Fifth Year+</label>
+                </li>
+            </ul>
+            <p class="required-field">* Required Field</p>
+
+            <p>BAIS core classes I have completed:</p>
+            <ul>
+                <li>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="info-sys" name="info-sys" value="Information Systems">
+                        <label for="info-sys"></label>
+                    </div>
+                    <label for="info-sys">Information Systems</label>
+                </li>
+                <li>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="ops-mgmt" name="ops-mgmt" value="Operations Management">
+                        <label for="ops-mgmt"></label>
+                    </div>
+                    <label for="ops-mgmt">Operations Management</label>
+                </li>
+                <li>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="found-ba" name="found-ba" value="Foundations of Business Analytics">
+                        <label for="found-ba"></label>
+                    </div>
+                    <label for="found-ba">Foundations of Business Analytics</label>
+                </li>
+                <li>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="comp-think" name="comp-think" value="Computational Thinking">
+                        <label for="comp-think"></label>
+                    </div>
+                    <label for="comp-think">Computational Thinking</label>
+                </li>
+                <li>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="db-mgmt" name="db-mgmt" value="Database Management">
+                        <label for="db-mgmt"></label>
+                    </div>
+                    <label for="db-mgmt">Database Management</label>
+                    <li>
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="data-wrang" name="data-wrang" value="Data Wrangling">
+                            <label for="data-wrang"></label>
+                        </div>
+                        <label for="data-wrang">Data Wrangling</label>
+                    </li>
+                    <li>
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="data-min" name="data-min" value="Data Mining">
+                            <label for="data-min"></label>
+                        </div>
+                        <label for="data-min">Data Mining</label>
+                    </li>
+                </main>
+                <div class="footer">
+                    <p>Page 2 of 3</p>
+                    <button onclick="window.location.href='pthachil_p3.html';">Next</button>
+                </div>
+                
